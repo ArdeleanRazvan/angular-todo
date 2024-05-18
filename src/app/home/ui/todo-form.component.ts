@@ -5,20 +5,34 @@ import { CreateTodo, EditTodo, Todo } from '../../shared/interfaces/todo';
 @Component({
   standalone: true,
   selector: 'app-todo-form',
-  template: `<form [formGroup]="todoForm" (ngSubmit)="submitTodoForm()">
+  template: `<form
+    class=" flex w-96 flex-col justify-center justify-items-center gap-2"
+    [formGroup]="todoForm"
+    (ngSubmit)="submitTodoForm()"
+  >
+    <p class="my-10 text-center text-3xl font-bold">
+      {{ isEditMode ? 'Edit Todo' : 'New Todo' }}
+    </p>
     <input
+      class="input input-bordered mx-2 focus-within:border-blue-600 focus-within:outline-blue-600"
       type="text"
       formControlName="title"
       placeholder="title..."
       [(ngModel)]="todoEdited.title"
     />
-    <input
+    <textarea
+      class="textarea textarea-bordered mx-2 focus-within:border-blue-600 focus-within:outline-blue-600"
       type="text"
       formControlName="description"
       placeholder="description..."
       [(ngModel)]="todoEdited.description"
-    />
-    <button type="submit" [disabled]="!todoForm.valid" value="Submit">
+    ></textarea>
+    <button
+      class="btn m-2 bg-gradient-to-br from-blue-400 via-blue-700 to-indigo-600 text-lg font-bold text-white antialiased disabled:text-white disabled:opacity-40"
+      type="submit"
+      [disabled]="!todoForm.valid"
+      value="Submit"
+    >
       {{ isEditMode ? 'Save' : 'Add' }}
     </button>
   </form>`,

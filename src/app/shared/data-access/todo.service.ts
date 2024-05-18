@@ -9,7 +9,10 @@ export class TodoService {
     {
       id: '1',
       title: 'Todo #1',
-      description: 'Todo #1 Description',
+      description: `Deşteaptă-te, române, din somnul cel de moarte,
+      În care te-adânciră barbarii de tirani!
+      Acum ori niciodată, croieşte-ţi altă soarte,
+      La care să se-nchine şi cruzii tăi duşmani.`,
       isEdited: false,
     },
     {
@@ -42,15 +45,15 @@ export class TodoService {
 
   deleteTodo(todoToDelete: DeleteTodo) {
     this.#todos.update((todos) =>
-      todos.filter((todo) => todo.id != todoToDelete.id)
+      todos.filter((todo) => todo.id != todoToDelete.id),
     );
   }
 
   editTodo(todoToEdit: EditTodo) {
     this.#todos.update((todos) =>
       todos.map((todo) =>
-        todo.id === todoToEdit.id ? { ...todo, isEdited: true } : todo
-      )
+        todo.id === todoToEdit.id ? { ...todo, isEdited: true } : todo,
+      ),
     );
   }
 
@@ -64,8 +67,8 @@ export class TodoService {
               title: saveData.title,
               isEdited: false,
             }
-          : todo
-      )
+          : todo,
+      ),
     );
   }
 }

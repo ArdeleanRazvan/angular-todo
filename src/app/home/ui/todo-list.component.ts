@@ -5,17 +5,23 @@ import { RouterLink } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-todo-list',
-  template: `<ul>
+  template: `<ul
+    class="my-9 flex w-full flex-col gap-2 text-lg font-semibold text-white"
+  >
     @for (todo of todos; track todo.id) {
-    <li>
-      <a routerLink="/detail/{{ todo.id }}">{{ todo.title }}</a>
-      <button (click)="delete.emit({ id: todo.id })">Delete</button>
-    </li>
-    }@empty {
-    <li>Nothing to do!</li>
+      <li
+        class="mx-2 flex h-12 items-center justify-between rounded-lg bg-gradient-to-r from-blue-400 via-blue-700 to-indigo-600 text-center"
+      >
+        <a class="ml-3" routerLink="/detail/{{ todo.id }}">{{ todo.title }}</a>
+        <button class="mx-3" (click)="delete.emit({ id: todo.id })">
+          Delete
+        </button>
+      </li>
+    } @empty {
+      <li>Nothing to do!</li>
     }
   </ul>`,
-  styleUrl: 'todo-list.component.scss',
+
   imports: [RouterLink],
 })
 export class TodoListComponent {
