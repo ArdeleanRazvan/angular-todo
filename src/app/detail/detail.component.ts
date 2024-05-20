@@ -8,7 +8,7 @@ import { TodoFormComponent } from '../home/ui/todo-form.component';
   selector: 'app-todo-detail',
   template: ` <div class="my-6 flex justify-center">
     <div
-      class="inline-flex flex-col rounded-xl bg-gradient-to-br from-blue-400 via-blue-700 to-indigo-600"
+      class="inline-flex flex-col rounded-xl bg-gradient-to-br from-violet-700 to-pink-600"
     >
       @if (todo(); as todo) {
         @if (todo.isEdited) {
@@ -27,7 +27,7 @@ import { TodoFormComponent } from '../home/ui/todo-form.component';
             <p class="mx-2 my-2 text-pretty">{{ todo.description }}</p>
             <div class="h-0.5 divide-x bg-blue-600"></div>
             <button
-              class="btn m-2 bg-gradient-to-br from-blue-400 via-blue-700 to-indigo-600 text-lg font-bold text-white antialiased disabled:text-white disabled:opacity-40"
+              class="btn m-2 bg-gradient-to-br from-violet-700 to-pink-600 text-lg font-bold text-white antialiased disabled:text-white disabled:opacity-40"
               (click)="todoService.editTodo({ id: todo.id })"
             >
               Edit

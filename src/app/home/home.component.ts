@@ -9,7 +9,7 @@ import { TodoListComponent } from './ui/todo-list.component';
   template: `
     <div class="my-6 flex justify-center">
       <div
-        class="inline-flex flex-col rounded-xl bg-gradient-to-br from-blue-400 via-blue-700 to-indigo-600"
+        class="inline-flex flex-col rounded-xl bg-gradient-to-br from-violet-700 to-pink-600"
       >
         <app-todo-form
           class="mx-1 mt-1 flex rounded-t-lg bg-slate-100"

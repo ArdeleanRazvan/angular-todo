@@ -14,7 +14,7 @@ import { CreateTodo, EditTodo, Todo } from '../../shared/interfaces/todo';
       {{ isEditMode ? 'Edit Todo' : 'New Todo' }}
     </p>
     <input
-      class="input input-bordered mx-2 focus-within:border-blue-600 focus-within:outline-blue-600"
+      class="input input-bordered mx-2 text-sm focus-within:border-blue-600 focus-within:outline-blue-600"
       type="text"
       formControlName="title"
       placeholder="title..."
@@ -28,7 +28,7 @@ import { CreateTodo, EditTodo, Todo } from '../../shared/interfaces/todo';
       [(ngModel)]="todoEdited.description"
     ></textarea>
     <button
-      class="btn m-2 bg-gradient-to-br from-blue-400 via-blue-700 to-indigo-600 text-lg font-bold text-white antialiased disabled:text-white disabled:opacity-40"
+      class="btn m-2 bg-gradient-to-br from-violet-700 to-pink-600 text-lg font-bold text-white antialiased disabled:text-white disabled:opacity-40"
       type="submit"
       [disabled]="!todoForm.valid"
       value="Submit"

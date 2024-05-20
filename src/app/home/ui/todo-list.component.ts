@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
   >
     @for (todo of todos; track todo.id) {
       <li
-        class="mx-2 flex h-12 items-center justify-between rounded-lg bg-gradient-to-r from-blue-400 via-blue-700 to-indigo-600 text-center"
+        class="mx-2 flex h-12 items-center justify-between rounded-lg bg-gradient-to-br from-violet-700 to-pink-600 text-center"
       >
         <a class="ml-3" routerLink="/detail/{{ todo.id }}">{{ todo.title }}</a>
         <button class="mx-3" (click)="delete.emit({ id: todo.id })">
